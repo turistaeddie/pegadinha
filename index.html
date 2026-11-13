@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uma surpresa para você 👀</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#fff;
+    background:radial-gradient(circle at top,#34346b 0,#17172e 45%,#090914 100%)}
+  .card{width:min(100%,520px);padding:38px 28px;text-align:center;border:1px solid #ffffff25;
+    border-radius:28px;background:#ffffff0d;box-shadow:0 24px 80px #0008;backdrop-filter:blur(10px)}
+  .emoji{font-size:64px;margin-bottom:12px}
+  h1{font-size:clamp(27px,6vw,40px);line-height:1.1;margin:8px 0 14px}
+  p{color:#d4d4e8;font-size:17px;line-height:1.5}
+  button{border:0;border-radius:999px;padding:16px 28px;margin-top:16px;font-size:17px;
+    font-weight:800;color:#17172e;background:#a7f36b;cursor:pointer;box-shadow:0 8px 0 #5b9b31;
+    transition:transform .12s,box-shadow .12s}
+  button:active{transform:translateY(5px);box-shadow:0 3px 0 #5b9b31}
+  #reveal{display:none;margin-top:28px;padding:22px 14px;border-radius:18px;
+    background:#ffdf5d;color:#211d0b;animation:pop .35s ease-out}
+  #reveal strong{display:block;font-size:clamp(30px,8vw,48px);line-height:1.1}
+  #reveal small{display:block;margin-top:12px;font-size:15px}
+  .foot{font-size:12px;color:#8888a8;margin-top:26px}
+  @keyframes pop{from{opacity:0;transform:scale(.75)}to{opacity:1;transform:scale(1)}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="emoji" id="face">🎁</div>
+  <h1 id="title">Você foi selecionado!</h1>
+  <p id="intro">Temos uma mensagem muito importante e exclusiva para você.<br>Toque no botão para revelar.</p>
+  <button id="revealBtn" onclick="reveal()">REVELAR MINHA SURPRESA</button>
+  <section id="reveal" aria-live="polite">
+    <strong>KKKKKK, SEU TROUXA! 🤡</strong>
+    <small>VOCÊ CAIU NA PEGADINHA. TOMA NO C* 😂</small>
+  </section>
+  <div class="foot">Uma brincadeira entre amigos. Não leve a sério 😎</div>
+</main>
+<script>
+function reveal(){
+  document.getElementById('reveal').style.display='block';
+  document.getElementById('face').textContent='🤡';
+  document.getElementById('title').textContent='PARABÉNS! Você ganhou...';
+  document.getElementById('intro').textContent='Um prêmio muito especial acaba de ser liberado:';
+  document.getElementById('revealBtn').textContent='PEGADINHA DESBLOQUEADA';
+  document.getElementById('revealBtn').disabled=true;
+  document.getElementById('revealBtn').style.opacity='.65';
+}
+</script>
+</body>
+</html>
